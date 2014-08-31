@@ -1,0 +1,6 @@
+[submodule ".janus/vim-nginx"]
+	path = .janus/vim-nginx
+	url = https://github.com/tsl0922/vim-nginx.git
+[submodule ".janus/vim-airline"]
+	path = .janus/vim-airline
+	url = https://github.com/bling/vim-airline.git
