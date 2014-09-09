@@ -1,8 +1,9 @@
-color molokai
+color Tomorrow-Night
 
 set encoding=utf-8
 set noshowmode
 set guifont=Menlo\ for\ Powerline
+set guioptions-=L
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -16,3 +17,5 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 let g:airline_powerline_fonts = 1
+
+let g:nerdtree_tabs_open_on_gui_startup = 0
