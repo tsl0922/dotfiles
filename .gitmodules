@@ -7,3 +7,12 @@
 [submodule ".janus/indentLine"]
 	path = .janus/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule ".janus/vim-gitgutter"]
+	path = .janus/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule ".janus/vim-nerdtree-tabs"]
+	path = .janus/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule ".janus/nerdtree-git-plugin"]
+	path = .janus/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
