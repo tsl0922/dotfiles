@@ -19,3 +19,6 @@
 [submodule ".janus/undotree"]
 	path = .janus/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule ".janus/vim-autoclose"]
+	path = .janus/vim-autoclose
+	url = https://github.com/spf13/vim-autoclose.git
