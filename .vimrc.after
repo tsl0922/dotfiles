@@ -19,3 +19,10 @@ let g:airline_symbols.linenr = ''
 let g:airline_powerline_fonts = 1
 
 let g:nerdtree_tabs_open_on_gui_startup = 0
+
+" clear search highlight with <CR>
+nnoremap <CR> :noh<CR><CR>
+
+" undotree: toggle with <Leader>u
+nnoremap <Leader>u :UndotreeToggle<CR>
+let g:undotree_SetFocusWhenToggle=1

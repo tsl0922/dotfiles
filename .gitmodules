@@ -16,3 +16,6 @@
 [submodule ".janus/nerdtree-git-plugin"]
 	path = .janus/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule ".janus/undotree"]
+	path = .janus/undotree
+	url = https://github.com/mbbill/undotree.git
