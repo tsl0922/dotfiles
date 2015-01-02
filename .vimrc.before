@@ -1,1 +1,5 @@
+" set leader key
 let mapleader=","
+
+" fix error on fish shell
+set shell=/bin/sh
