@@ -67,12 +67,15 @@ end
 
 function grid.maximize_window()
   local win = window.focusedwindow()
+  local screen = win:screen()
   local rect = grid.get(win)
-  local f = {x = 0, y = 0, w = grid.GRIDWIDTH, h = grid.GRIDHEIGHT}
   if (rect.w == grid.GRIDWIDTH and rect.h == grid.GRIDHEIGHT) then
-    f = {x = 3, y = 2, w = 5, h = 6}
+    local f = { x = 3, y = 2, w = 5, h = 6 }
+    grid.set(win, f, screen)
+  else
+    local f = screen:frame()
+    win:setframe(f)
   end
-  grid.set(win, f, win:screen())
 end
 
 function grid.pushwindow_nextscreen()
