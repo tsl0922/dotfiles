@@ -1,0 +1,32 @@
+[user]
+	email = tsl0922@gmail.com
+	name = Shuanglei Tao
+[core]
+	autocrlf = input
+	excludesfile = /Users/tsl0922/.gitignore_global
+	editor = vim
+[color]
+	ui = auto
+[alias]
+	amend = commit --amend -C HEAD
+	ap = add -p
+	ci = commit
+	co = checkout
+	count = shortlog -sn
+	ctags = !.git/hooks/ctags
+	ds = diff --staged
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ll = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --decorate --numstat
+	lga = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lla = log --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --decorate --numstat
+	pr = pull --rebase
+	st = status -sb
+    x = !open -a gitx .
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[http]
+	postBuffer = 524288000
+[push]
+	default = matching
