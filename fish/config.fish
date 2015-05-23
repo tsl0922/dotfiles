@@ -10,7 +10,7 @@ set fish_theme agnoster
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
 # Example format: set fish_plugins autojump bundler
-set fish_plugins brew git chruby gem bundler rails tmux ssh node proxy
+set fish_plugins brew git chruby gem rails tmux ssh node proxy
 
 # Path to your custom folder (default path is $FISH/custom)
 set fish_custom $HOME/dotfiles/oh-my-fish
@@ -19,4 +19,4 @@ set fish_custom $HOME/dotfiles/oh-my-fish
 . $fish_path/oh-my-fish.fish
 
 # Load autojump
-. /usr/local/etc/autojump.fish
+[ -f /usr/local/share/autojump/autojump.fish ]; and . /usr/local/share/autojump/autojump.fish
