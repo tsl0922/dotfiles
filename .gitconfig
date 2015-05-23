@@ -10,6 +10,7 @@
 [alias]
 	amend = commit --amend -C HEAD
 	ap = add -p
+	br = branch
 	ci = commit
 	co = checkout
 	count = shortlog -sn
