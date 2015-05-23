@@ -12,6 +12,14 @@ echo -n "Creating symbolic links for config files..."
 [ ! -f $HOME/.gitignore_global ] && ln -s $SCRIPT_DIR/.gitignore_global $HOME/.gitignore_global
 echo "done"
 
+echo -n "Install open files limit config for launchctl..."
+sudo cp limit.maxfiles.plist /Library/LaunchDaemons/limit.maxfiles.plist
+sudo chmod 644 /Library/LaunchDaemons/limit.maxfiles.plist
+sudo cp limit.maxproc.plist /Library/LaunchDaemons/limit.maxproc.plist
+sudo chmod 644 /Library/LaunchDaemons/limit.maxproc.plist
+echo "done"
+echo "NOTE: reboot system to let launchctl config take effect"
+
 echo -n "Install and setup oh-my-fish..."
 brew install fish chruby-fish autojump
 curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
