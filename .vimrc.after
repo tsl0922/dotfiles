@@ -1,6 +1,5 @@
-color Tomorrow-Night
+color molokai
 
-set encoding=utf-8
 set noshowmode
 set guifont=Menlo\ for\ Powerline
 set guioptions-=L
