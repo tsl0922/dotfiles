@@ -4,7 +4,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 echo -n "Creating symbolic links for config files..."
 [ ! -d $HOME/.janus ] && ln -s $SCRIPT_DIR/.janus $HOME/.janus
-[ ! -d $HOME/.mjolnir ] && ln -s $SCRIPT_DIR/.mjolnir $HOME/.mjolnir
+[ ! -d $HOME/.hammerspoon ] && ln -s $SCRIPT_DIR/.hammerspoon $HOME/.hammerspoon
 [ ! -f $HOME/.vimrc.before ] && ln -s $SCRIPT_DIR/.vimrc.before $HOME/.vimrc.before
 [ ! -f $HOME/.vimrc.after ] && ln -s $SCRIPT_DIR/.vimrc.after $HOME/.vimrc.after
 [ ! -f $HOME/.tmux.conf ] && ln -s $SCRIPT_DIR/.tmux.conf $HOME/.tmux.conf
