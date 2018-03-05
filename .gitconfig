@@ -5,6 +5,7 @@
 	autocrlf = input
 	excludesfile = /Users/tsl0922/.gitignore_global
 	editor = vim
+	quotepath = false
 [color]
 	ui = auto
 [alias]
@@ -22,7 +23,7 @@
 	lla = log --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --decorate --numstat
 	pr = pull --rebase
 	st = status -sb
-    x = !open -a gitx .
+	x = !open -a gitx .
 [filter "media"]
 	required = true
 	clean = git media clean %f
