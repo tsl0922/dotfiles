@@ -1,22 +1,25 @@
-# Remove fish default greeting
-set -e fish_greeting
+# Aliases
+alias ls 'ls -G'
+alias ll 'ls -alF'
 
-# Path to your oh-my-fish.
-set fish_path $HOME/.oh-my-fish
+# Custom environment variables
 
-# Theme
-set fish_theme agnoster
+set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.ustc.edu.cn/homebrew-bottles
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
-# Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
-# Example format: set fish_plugins autojump bundler
-set fish_plugins brew git chruby gem rails tmux ssh node proxy
+# JAVA_HOME
+set -gx JAVA_HOME (/usr/libexec/java_home -v 1.8)
 
-# Path to your custom folder (default path is $FISH/custom)
-set fish_custom $HOME/dotfiles/oh-my-fish
+# GOROOT and GOPATH
+set -gx GOROOT (go env GOROOT)
+set -gx GOPATH (go env GOPATH)
+set -gx PATH $PATH $GOPATH/bin
 
-# Load oh-my-fish configuration.
-. $fish_path/oh-my-fish.fish
+# default vagrant provider
+set -gx VAGRANT_DEFAULT_PROVIDER virtualbox
 
-# Load autojump
-[ -f /usr/local/share/autojump/autojump.fish ]; and . /usr/local/share/autojump/autojump.fish
+# ulimit
+ulimit -n 65536
+ulimit -u 2048
+
+# autojump
+[ -f /usr/local/share/autojump/autojump.fish ]; and source /usr/local/share/autojump/autojump.fish

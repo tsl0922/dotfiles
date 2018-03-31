@@ -21,10 +21,8 @@ echo "done"
 echo "NOTE: reboot system to let launchctl config take effect"
 
 echo -n "Install and setup oh-my-fish..."
-brew install fish chruby-fish autojump
-curl -L https://github.com/bpinto/oh-my-fish/raw/master/tools/install.fish | fish
-mkdir -p $HOME/.config/fish
-ln -sF $SCRIPT_DIR/fish/config.fish $HOME/.config/fish/config.fish
+brew install autojump fish
+curl -L https://get.oh-my.fish | fish
 echo "done"
 
 echo "Changing default shell to fish..."

@@ -32,3 +32,5 @@
 	postBuffer = 524288000
 [push]
 	default = matching
+[credential]
+	helper = osxkeychain
