@@ -2,9 +2,6 @@ hs.hotkey.alertDuration = 0
 hs.hints.showTitleThresh = 0
 hs.window.animationDuration = 0
 
-hs.loadSpoon("SpeedMenu")
-hs.loadSpoon("WinWin")
-
 function fcenter()
     local win = hs.window.focusedWindow()
     if win then
@@ -18,9 +15,26 @@ function fcenter()
     end
 end
 
--- custom hotkey
-hs.hotkey.bind({"cmd", "alt"}, "left", "Lefthalf of Screen", function() spoon.WinWin:moveAndResize('halfleft') end)
-hs.hotkey.bind({"cmd", "alt"}, "right", "Righthalf of Screen", function() spoon.WinWin:moveAndResize('halfright') end)
-hs.hotkey.bind({"cmd", "alt"}, "up", "Fullscreen", function() spoon.WinWin:moveAndResize('fullscreen') end)
-hs.hotkey.bind({"cmd", "alt"}, "down", "Resize & Center", function() fcenter() end)
-hs.hotkey.bind({"cmd", "alt"}, "return", "Center Window", function() spoon.WinWin:moveAndResize('center') end)
+hs.loadSpoon("SpoonInstall")
+
+spoon.SpoonInstall.use_syncinstall = true
+
+spoon.SpoonInstall:andUse("WinWin", {
+    fn = function (s)
+        hs.hotkey.bind({"cmd", "alt"}, "left", "Lefthalf of Screen", function() s:moveAndResize('halfleft') end)
+        hs.hotkey.bind({"cmd", "alt"}, "right", "Righthalf of Screen", function() s:moveAndResize('halfright') end)
+        hs.hotkey.bind({"cmd", "alt"}, "up", "Maximize", function() s:moveAndResize('maximize') end)
+        hs.hotkey.bind({"cmd", "alt"}, "down", "Resize & Center", function() fcenter() end)
+        hs.hotkey.bind({"cmd", "alt"}, "return", "Center Window", function() s:moveAndResize('center') end)
+    end
+})
+
+spoon.SpoonInstall:andUse("TextClipboardHistory", {
+    config = {
+        show_in_menubar = false,
+    },
+    hotkeys = {
+        toggle_clipboard = {{"cmd", "shift"}, "v" }
+    },
+    start = true
+})
