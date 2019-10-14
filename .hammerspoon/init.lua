@@ -34,7 +34,24 @@ spoon.SpoonInstall:andUse("TextClipboardHistory", {
         show_in_menubar = false,
     },
     hotkeys = {
-        toggle_clipboard = {{"cmd", "shift"}, "v" }
+        toggle_clipboard = {{"cmd", "shift"}, "v"}
     },
+    start = true
+})
+
+spoon.SpoonInstall:andUse("Seal", {
+    hotkeys = {
+        show = {{"cmd"}, "space"}
+    },
+    fn = function(s)
+        s:loadPlugins({"apps", "calc", "screencapture", "useractions"})
+        s.plugins.useractions.actions = {
+            ["Hammerspoon docs webpage"] = {
+                url = "https://www.hammerspoon.org/docs/",
+                icon = hs.image.imageFromName(hs.image.systemImageNames.ApplicationIcon)
+            }
+        }
+        s:refreshAllCommands()
+    end,
     start = true
 })
