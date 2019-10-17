@@ -46,12 +46,26 @@ spoon.SpoonInstall:andUse("Seal", {
     fn = function(s)
         s:loadPlugins({"apps", "calc", "screencapture", "useractions"})
         s.plugins.useractions.actions = {
-            ["Hammerspoon docs webpage"] = {
-                url = "https://www.hammerspoon.org/docs/",
-                icon = hs.image.imageFromName(hs.image.systemImageNames.ApplicationIcon)
+            ["Lock Screen"] = {
+                keyword = "Lock",
+                fn = function() hs.caffeinate.lockScreen() end
+            },
+            ["Logout"] = {
+                keyword = "Logout",
+                fn = function() hs.caffeinate.logOut() end
+            },
+            ["Sleep"] = {
+                keyword = "Sleep",
+                fn = function() hs.caffeinate.systemSleep() end
+            },
+            ["Screen Saver"] = {
+                keyword = "Screen Saver",
+                fn = function() hs.caffeinate.startScreensaver() end
             }
         }
         s:refreshAllCommands()
     end,
     start = true
 })
+
+spoon.SpoonInstall:andUse("SpeedMenu", {start = true})
