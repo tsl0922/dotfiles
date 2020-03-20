@@ -3,13 +3,13 @@ hs.hints.showTitleThresh = 0
 hs.window.animationDuration = 0
 
 function fcenter()
-    local win = hs.window.focusedWindow()
-    if win then
-        local screen = win:screen()
-        local max = screen:fullFrame()
-        local stepw = max.w/30
-        local steph = max.h/30
-        win:setFrame({x = stepw*5, y = steph*5, w = stepw*20, h = steph*20})
+    local cwin = hs.window.focusedWindow()
+    if cwin then
+        local cscreen = cwin:screen()
+        local cres = cscreen:fullFrame()
+        local stepw = cres.w/30
+        local steph = cres.h/30
+        cwin:setFrame({x=cres.x+stepw*5, y = steph*5, w = stepw*20, h = steph*20})
     else
         hs.alert.show("No focused window!")
     end
@@ -26,6 +26,7 @@ spoon.SpoonInstall:andUse("WinWin", {
         hs.hotkey.bind({"cmd", "alt"}, "up", "Maximize", function() s:moveAndResize('maximize') end)
         hs.hotkey.bind({"cmd", "alt"}, "down", "Resize & Center", function() fcenter() end)
         hs.hotkey.bind({"cmd", "alt"}, "return", "Center Window", function() s:moveAndResize('center') end)
+        hs.hotkey.bind({"cmd", "alt"}, "n", "Next Screen", function() s:moveToScreen('next') end)
     end
 })
 
