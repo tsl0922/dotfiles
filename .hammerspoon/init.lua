@@ -9,7 +9,7 @@ function fcenter()
         local cres = cscreen:fullFrame()
         local stepw = cres.w/30
         local steph = cres.h/30
-        cwin:setFrame({x=cres.x+stepw*5, y = steph*5, w = stepw*20, h = steph*20})
+        cwin:setFrame({x=cres.x+stepw*5, y = cres.y+steph*5, w = stepw*20, h = steph*20})
     else
         hs.alert.show("No focused window!")
     end
